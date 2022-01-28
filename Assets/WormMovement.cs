@@ -10,6 +10,7 @@ public class WormMovement : MonoBehaviour
     private int gap = 30;
 
     private List<Vector3> PositionHistory = new List<Vector3>();
+
     Raycast raycast = new Raycast();
     private List<GameObject> BodyParts = new List<GameObject>();
     // Start is called before the first frame update
@@ -20,6 +21,8 @@ public class WormMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float steerDirection = Input.GetAxis("Horizontal");
+
         if (Input.GetMouseButtonDown(0))
         {
             MoveSpeed = 12;
@@ -41,7 +44,6 @@ public class WormMovement : MonoBehaviour
 
         PositionHistory.Insert(0, transform.position);
 
-        float steerDirection = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up * steerDirection * SteerSpeed * Time.deltaTime);
 
         int index = 0;
