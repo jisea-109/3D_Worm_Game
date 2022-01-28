@@ -6,12 +6,11 @@ using System.Linq;
 
 public class Raycast : MonoBehaviour
 {
-    private float speed = .1f;
     private Rigidbody rb;
     private int flag = 0;
     private static int num = 5;
     private static int start = 0;
-    private static List<GameObject> bodyMembers = new List<GameObject>();
+    public static List<GameObject> bodyMembers = new List<GameObject>();
     [SerializeField] private GameObject objectToBeSpawned;
     [SerializeField] private Transform parent;
     [SerializeField] private GameObject parentObject;
@@ -80,6 +79,6 @@ public class Raycast : MonoBehaviour
     void Update()
     {
         Vector3 moveDirection = new Vector3(0, 0.0f, 0);
-        rb.AddForce(moveDirection * speed);
+        rb.AddForce(moveDirection * .1f);
     }
 }

@@ -10,8 +10,6 @@ public class WormMovement : MonoBehaviour
     private int gap = 30;
 
     private List<Vector3> PositionHistory = new List<Vector3>();
-
-    Raycast raycast = new Raycast();
     private List<GameObject> BodyParts = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -39,7 +37,8 @@ public class WormMovement : MonoBehaviour
                 gap += 1;
             }
         }
-        BodyParts = raycast.getList();
+        //BodyParts = ray.getList();
+        BodyParts = Raycast.bodyMembers;
         transform.position += transform.forward * MoveSpeed * Time.deltaTime;
 
         PositionHistory.Insert(0, transform.position);
