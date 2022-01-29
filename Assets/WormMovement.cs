@@ -37,7 +37,6 @@ public class WormMovement : MonoBehaviour
                 gap += 1;
             }
         }
-        //BodyParts = ray.getList();
         BodyParts = Raycast.bodyMembers;
         transform.position += transform.forward * MoveSpeed * Time.deltaTime;
 
