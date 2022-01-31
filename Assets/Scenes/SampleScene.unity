@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.001
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -336,6 +336,27 @@ MonoBehaviour:
       probability: 100
       prefab: {fileID: 196434, guid: 1a7d988da17e44741aabfb0c94a2035b, type: 3}
     distance: 11.9
+    scaleRange: {x: 0.8, y: 1.2}
+    sinkAmount: 0
+  - enabled: 1
+    name: TreeCreator_Bush_A
+    seed: 30442
+    probability: 10
+    collisionCheck: 1
+    rejectUnderwater: 1
+    heightRange: {x: 0, y: 1000}
+    slopeRange: {x: 0, y: 60}
+    curvatureRange: {x: 0, y: 1}
+    layerMasks:
+    - name: NewLayer 1
+      layerID: 0
+      threshold: 0
+    instanceCount: 428
+    prefabs:
+    - index: 2
+      probability: 100
+      prefab: {fileID: 196434, guid: 2c33c759b6bfb1448a79429a0c761b44, type: 3}
+    distance: 10
     scaleRange: {x: 0.8, y: 1.2}
     sinkAmount: 0
   grassPrefabs:
@@ -11282,7 +11303,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.43370605, y: 0.000000015503629, z: -0.00000000746195, w: 0.90105444}
+  m_LocalRotation: {x: 0.43370605, y: 0.000000015503968, z: -0.000000007462656, w: 0.90105444}
   m_LocalPosition: {x: 213.07, y: 10.29, z: -769.37244}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -15985,7 +16006,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88908
+  m_Name: pb_Mesh18948
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19448,7 +19469,7 @@ MonoBehaviour:
   obj: {fileID: 1678454759}
   count: 0
   objectCount: 1000
-  CoordinateY: 5
+  CoordinateY: 20
 --- !u!4 &1791064179
 Transform:
   m_ObjectHideFlags: 0
@@ -19510,7 +19531,7 @@ MonoBehaviour:
   obj: {fileID: 262566246}
   count: 0
   objectCount: 100
-  CoordinateY: 0.5
+  CoordinateY: 0
 --- !u!1 &1956866240
 GameObject:
   m_ObjectHideFlags: 0
@@ -21116,7 +21137,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107448318}
-  m_LocalRotation: {x: 0.41672283, y: -0.000000027091316, z: 0.00000001241931, w: 0.9090336}
+  m_LocalRotation: {x: 0.41672283, y: 0.000000027091316, z: -0.00000001241931, w: 0.9090336}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
