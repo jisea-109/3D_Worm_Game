@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using static PlayerManagers;
+using static Raycast;
 public class Controller : MonoBehaviour
 {
     public float lookRadius = 10f;
-
+    private List<GameObject> Body = new List<GameObject>();
     Transform target;
     NavMeshAgent agent;
     // Start is called before the first frame update
@@ -30,15 +31,29 @@ public class Controller : MonoBehaviour
                 FaceTarget();
             }
         }
+        Body = Raycast.bodyMembers;
+        for (int i = 0; i < Body.Count; i++)
+        {
+            float distance2 = Vector3.Distance(Body[i].transform.position, transform.position);
+            if (distance2 <= lookRadius)
+            {
+                agent.SetDestination(target.position);
+
+                if (distance2 <= agent.stoppingDistance)
+                {
+                    FaceTarget();
+                }
+            }
+        }
     }
 
-    void FaceTarget ()
+    void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
-    void OnDrawGizmosSelected ()
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
