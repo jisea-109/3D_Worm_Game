@@ -6,12 +6,14 @@ using UnityEngine;
 using static Raycast;
 public class ThirdPersonMovement : MonoBehaviour
 {
-    bool flag = false;
+    bool flag = false; // to prevent the error from IndexError
     public CharacterController controller;
     public Transform cam;
 
     private float speed = 6;
     private int gap = 12;
+    float vertical;
+    float horizontal;
 
     Vector3 velocity;
     public float gravity = -9.81f;
@@ -21,8 +23,15 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKey(KeyCode.W))
+        {
+            vertical = Input.GetAxisRaw("Vertical");
+        }
+        if (!Input.GetKey(KeyCode.W))
+        {
+            vertical = 0f;
+        }
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -42,10 +51,15 @@ public class ThirdPersonMovement : MonoBehaviour
                 gap += 1;
             }
         }
+        float dTime = Time.deltaTime;
+        if (dTime > 0.3f)
+        {
+            dTime = 0.3f;
+        }
         if (direction.magnitude >= 0.1f)
         {
-            transform.Rotate(Vector3.up * horizontal * 180 * Time.deltaTime);
-            controller.Move(transform.forward * speed * Time.deltaTime);
+            transform.Rotate(Vector3.up * horizontal * 180 * dTime);
+            controller.Move(transform.forward * speed * dTime);
             PositionHistory.Insert(0, transform.position);
             flag = true;
         }

@@ -23,7 +23,7 @@ public class GenerateRandomObjects : MonoBehaviour
             int xPos = Random.Range(130,834);
             int zPos = Random.Range(-1320,-362);
             Instantiate(obj, new Vector3(xPos,CoordinateY, zPos), Quaternion.identity);
-            yield return new WaitForSeconds(0.0001f);
+            yield return new WaitForSeconds(0.00000001f);
             count += 1;
         }
     }
