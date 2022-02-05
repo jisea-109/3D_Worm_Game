@@ -11,7 +11,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform cam;
 
     private float speed = 6;
-    private int gap = 12;
+    private int gap = 20;
+    private int steerspeed = 180;
     float vertical;
     float horizontal;
 
@@ -37,7 +38,7 @@ public class ThirdPersonMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
         if (Input.GetMouseButtonDown(0))
         {
-            speed = 12;
+            speed = 10;
             if (gap > 1)
             {
                 gap -= 1;
@@ -46,7 +47,7 @@ public class ThirdPersonMovement : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             speed = 6;
-            if (gap < 12)
+            if (gap < 20)
             {
                 gap += 1;
             }
@@ -58,7 +59,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         if (direction.magnitude >= 0.1f)
         {
-            transform.Rotate(Vector3.up * horizontal * 180 * dTime);
+            transform.Rotate(Vector3.up * horizontal * steerspeed * dTime);
             controller.Move(transform.forward * speed * dTime);
             PositionHistory.Insert(0, transform.position);
             flag = true;
