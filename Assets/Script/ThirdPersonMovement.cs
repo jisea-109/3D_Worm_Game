@@ -11,7 +11,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform cam;
 
     private float speed = 6;
-    private int gap = 20;
+    private int gap = 12;
     private int steerspeed = 180;
     float vertical;
     float horizontal;
@@ -47,7 +47,7 @@ public class ThirdPersonMovement : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             speed = 6;
-            if (gap < 20)
+            if (gap < 12)
             {
                 gap += 1;
             }

@@ -7,7 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Raycast.start = 0;
+        Raycast.bodyMembers.Clear();
+        SceneManager.LoadScene("Scenes/SampleScene");
+        
     }
     public void QuitGame()
     {

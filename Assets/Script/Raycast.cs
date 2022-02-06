@@ -9,8 +9,10 @@ public class Raycast : MonoBehaviour
     private Rigidbody rb;
     private int flag = 0;
     private static int num = 5;
-    private static int start = 0;
+
+    public static int start = 0;
     public static List<GameObject> bodyMembers = new List<GameObject>();
+    public static int score = 0;
     [SerializeField] private GameObject objectToBeSpawned;
     [SerializeField] private Transform parent;
     [SerializeField] private GameObject parentObject;
@@ -40,7 +42,7 @@ public class Raycast : MonoBehaviour
         objectToBeSpawned.name = "Body_" + (num);
         bodyMembers.Add(objectToBeSpawned);
     }
-    private void setup()
+    public void setup()
     {
         for (int i = 1; i <= 4; i++)
         {
@@ -49,12 +51,14 @@ public class Raycast : MonoBehaviour
             objectToBeSpawned.name = "Body_" + (i);
             bodyMembers.Add(objectToBeSpawned);
         }
+        score = 0;
     }
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "HeadnBody" || col.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
+            score += 1;
             flag = 1;
         }
         if (flag == 1)
