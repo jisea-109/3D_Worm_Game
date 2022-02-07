@@ -16,4 +16,12 @@ public class PlayerManagers : MonoBehaviour
     #endregion
 
     public GameObject player;
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "HeadnBody" || col.gameObject.tag == "Player")
+        {
+            GameOverMenu.flag = true;
+        }
+    }
 }

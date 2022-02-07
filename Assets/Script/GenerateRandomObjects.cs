@@ -13,7 +13,6 @@ public class GenerateRandomObjects : MonoBehaviour
     void Start()
     {
         StartCoroutine(ObjectDrop());
-        obj.name = "Parasite";
     }
 
     IEnumerator ObjectDrop()
