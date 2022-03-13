@@ -6,7 +6,7 @@ using static PlayerManagers;
 using static Raycast;
 public class Controller : MonoBehaviour
 {
-    public float lookRadius = 10f;
+    public float lookRadius;
     private List<GameObject> Body = new List<GameObject>();
     Transform target;
     NavMeshAgent agent;
@@ -20,7 +20,7 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+       float distance = Vector3.Distance(target.position, transform.position);
 
         if (distance <= lookRadius)
         {

@@ -60,13 +60,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             transform.Rotate(Vector3.up * horizontal * steerspeed * dTime);
-            if (horizontal > 0)
-            {
-                Debug.Log("Horizontal: " + horizontal);
-            }
-            Debug.Log("Vector3.up: " + Vector3.up);
             controller.Move(transform.forward * speed * dTime);
-            Debug.Log("transform.forward" + transform.forward);
             PositionHistory.Insert(0, transform.position);
             flag = true;
         }
