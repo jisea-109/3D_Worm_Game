@@ -8,6 +8,6 @@ public class addScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = "Score: " + Raycast.score.ToString();
+        score.text = "Score: " + Body_generator.score.ToString();
     }
 }

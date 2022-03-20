@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using static PlayerManagers;
-using static Raycast;
+using static Body_generator;
 public class Controller : MonoBehaviour
 {
     public float lookRadius;
@@ -31,7 +31,7 @@ public class Controller : MonoBehaviour
                 FaceTarget();
             }
         }
-        Body = Raycast.bodyMembers;
+        Body = Body_generator.bodyMembers;
         for (int i = 0; i < Body.Count; i++)
         {
             float distance2 = Vector3.Distance(Body[i].transform.position, transform.position);

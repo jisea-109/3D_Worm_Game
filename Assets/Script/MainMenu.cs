@@ -7,8 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        Raycast.start = 0;
-        Raycast.bodyMembers.Clear();
+        Body_generator.start = 0;
+        Body_generator.bodyMembers.Clear();
         SceneManager.LoadScene("Scenes/SampleScene");
         
     }

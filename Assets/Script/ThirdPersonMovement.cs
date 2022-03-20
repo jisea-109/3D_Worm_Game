@@ -3,7 +3,7 @@ using System.Collections;
 
 using System.Collections.Generic;
 using UnityEngine;
-using static Raycast;
+using static Body_generator;
 public class ThirdPersonMovement : MonoBehaviour
 {
     bool flag = false; // to prevent the error from IndexError
@@ -66,7 +66,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         if (flag == true)
         {
-            BodyParts = Raycast.bodyMembers;
+            BodyParts = Body_generator.bodyMembers;
             for (int i = 0; i < BodyParts.Count; i++)
             {
                 Vector3 point = PositionHistory[Mathf.Min(i * gap, PositionHistory.Count - 1)];

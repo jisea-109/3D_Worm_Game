@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Raycast : MonoBehaviour
+public class Body_generator : MonoBehaviour
 {
     private Rigidbody rb;
     private int flag = 0;

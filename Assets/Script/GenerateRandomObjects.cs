@@ -5,7 +5,7 @@ using UnityEngine;
 public class GenerateRandomObjects : MonoBehaviour
 {
     public GameObject obj;
-    public int count;
+    private int count;
     public int objectCount;
     [SerializeField] private float CoordinateY;
 

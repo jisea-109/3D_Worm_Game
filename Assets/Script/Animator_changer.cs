@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Animator_pause : MonoBehaviour
+public class Animator_changer : MonoBehaviour
 {
     private Animator animator;
     private int flag;
@@ -16,7 +16,7 @@ public class Animator_pause : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
-        if (distance <= 20)
+        if (distance <= 15)
         {
             flag = 1;
         }

@@ -23,8 +23,8 @@ public class GameOverMenu : MonoBehaviour
     }
     public void Play()
     {
-        Raycast.start = 0;
-        Raycast.bodyMembers.Clear();
+        Body_generator.start = 0;
+        Body_generator.bodyMembers.Clear();
         Time.timeScale = 1f;
         endMenu.SetActive(false);
         flag = false;
