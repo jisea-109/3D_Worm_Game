@@ -26,10 +26,6 @@ public class Controller : MonoBehaviour
         {
             agent.SetDestination(target.position);
 
-            if (distance <= agent.stoppingDistance)
-            {
-                FaceTarget();
-            }
         }
         Body = Body_generator.bodyMembers;
         for (int i = 0; i < Body.Count; i++)
@@ -39,20 +35,15 @@ public class Controller : MonoBehaviour
             {
                 agent.SetDestination(target.position);
 
-                if (distance2 <= agent.stoppingDistance)
-                {
-                    FaceTarget();
-                }
             }
         }
     }
-
-    void FaceTarget()
-    {
-        Vector3 direction = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
-    }
+    // void Chase()
+    // {
+    //     Vector3 direction = (target.position - transform.position).normalized;
+    //     Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+    //     transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    // }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

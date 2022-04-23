@@ -24,8 +24,7 @@ public class Animator_changer : MonoBehaviour
         {
             flag = 0;
         }
-        var flag_controller = flag;
-        animator.SetInteger("Flag", flag_controller);
+        animator.SetInteger("Flag", flag);
         
     }
 }

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class GenerateRandomObjects : MonoBehaviour
 {
-    public GameObject obj;
+    public GameObject objectPrefab;
     private int count;
     public int objectCount;
     [SerializeField] private float CoordinateY;
 
-    // Update is called once per frame
     void Start()
     {
         StartCoroutine(ObjectDrop());
@@ -21,7 +20,7 @@ public class GenerateRandomObjects : MonoBehaviour
         {
             int xPos = Random.Range(130,834);
             int zPos = Random.Range(-1320,-362);
-            Instantiate(obj, new Vector3(xPos,CoordinateY, zPos), Quaternion.identity);
+            Instantiate(objectPrefab, new Vector3(xPos,CoordinateY, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.00000001f);
             count += 1;
         }
