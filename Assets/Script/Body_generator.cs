@@ -29,15 +29,7 @@ public class Body_generator : MonoBehaviour
     private void generate()
     {
         GameObject tail = bodyMembers.Last();
-        // int length = bodyMembers.Count + 1;
-        // float xPosition = parent.transform.position.x - tail.transform.position.x;
-        // float zPosition = parent.transform.position.z - tail.transform.position.z;
-        // float x_count = xPosition / length;
-        // float z_count = zPosition / length;
-        // x_count = x_count * -1;
-        // z_count = z_count * -1;
          Vector3 position;
-        // position = new Vector3(tail.transform.position.x + x_count, tail.transform.position.y, tail.transform.position.z + z_count);
         position = new Vector3(0, tail.transform.position.y, 0);
         objectToBeSpawned = Instantiate(objectToBeSpawned, position, Quaternion.identity, parent);
         objectToBeSpawned.name = "Body_" + (num);
