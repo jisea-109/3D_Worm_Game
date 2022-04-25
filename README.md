@@ -1,1 +1,3 @@
-# 3D_Worm_Game
+## Implement the game
+
+## Game Instruction
