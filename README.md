@@ -11,3 +11,4 @@ Click coursework.exe file then the main menu would be shown
 3. Move mouse to control the camera
 
 If you want to pause the game, press ESC
+If the game is over and want to contiue, clike the restart button to start 
